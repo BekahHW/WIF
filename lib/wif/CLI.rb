@@ -1,0 +1,4 @@
+class Wif::CLI
+
+
+end
