@@ -2,6 +2,10 @@ class Wif::Scraper
 
   BASE_URL = "https://editorial.rottentomatoes.com/article/fearless-female-movie-heroes-who-inspire-us/"
 
+  def initialize(movie_url = nil)
+    @movie_url = movie_url
+  end
+
   def self.scrape_heroines
     doc = Nokogiri::HTML(open(BASE_URL))
 
