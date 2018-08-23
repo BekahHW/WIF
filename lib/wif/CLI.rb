@@ -37,4 +37,15 @@ class Wif::CLI
     puts "YEAR: #{input.year} \n "
     puts "HEROINE SCORE AND SUMMARY: #{input.info}"
   end
+
+  def see_more(movie)
+    puts "Would you like to see more? \n"
+    puts "Y/N"
+    answer = gets.strip
+    movie.open_in_browser if ["Y"].include?(answer.upcase)
+
+    puts "\n Thank you for using Badass Women in Film."
+    puts "Here's the list if you want to select another film. \n"
+    list
+  end
 end
