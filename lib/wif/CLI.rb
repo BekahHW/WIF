@@ -18,4 +18,16 @@ class Wif::CLI
     end
     select_list(movies)
   end
+
+  def select_list(movies)
+    puts "\n Which movie would you like to know more about?"
+
+    input = gets.strip
+
+    if input.to_i.between?(1, movies.length)
+      index = input.to_i - 1
+      display_selection(movies[index])
+      see_more(movies[index])
+    end
+  end
 end
