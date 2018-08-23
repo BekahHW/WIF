@@ -3,6 +3,10 @@ class Wif::Filmography
 
   @@all = []
 
+  def open_in_browser
+    system("open '#{movie_url}'")
+  end
+
   def self.all
     @@all
   end
