@@ -6,11 +6,12 @@ class Wif::CLI
     puts "Let's get started with a sample of movies with amazing female characters."
     puts ""
     Wif::Scraper.scrape_heroines
+    puts "Here is a list of ten movies with kickass heroines:"
+
     list
   end
 
   def list
-    puts "Here is a list of ten movies with kickass heroines:"
 
     movies = Wif::Filmography.all.sample(10)
     movies.each.with_index(1) do |movie, i|
@@ -42,10 +43,12 @@ class Wif::CLI
     puts "Would you like to see more? \n"
     puts "Y/N"
     answer = gets.strip
-    movie.open_in_browser if ["Y"].include?(answer.upcase)
-
-    puts "\n Thank you for using Badass Women in Film."
-    puts "Here's the list if you want to select another film. \n"
-    list
+    if ["Y"].include?(answer.upcase)
+      movie.open_in_browser
+    else
+      puts "\nThank you for using Badass Women in Film."
+      puts "Here's the list if you want to select another film:"
+      list
+    end
   end
 end
