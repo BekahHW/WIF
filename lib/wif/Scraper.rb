@@ -8,6 +8,15 @@ class Wif::Scraper
     doc.search(".articleContentBody .clearfix").each do |each_movie|
 
       movie = Wif::Filmography.new
+
+      movie.title = each_movie.search("a").text.strip
+      movie.score = each_movie.search(".tMeterScore").text
+      movie.heroine_rank = each_movie.search(".edit-rank").text
+      movie.movie_url = each_movie.search("a").attr("href")
+      movie.info = each_movie.search(".col-sm-20 p").text
+      movie.year = each_movie.search("h2 .subtle").text
+
+      movie.save
     end
   end
 end
