@@ -1,0 +1,3 @@
+class Wif::Filmography
+
+end
