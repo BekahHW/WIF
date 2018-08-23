@@ -30,4 +30,11 @@ class Wif::CLI
       see_more(movies[index])
     end
   end
+
+  def display_selection(input)
+    puts "#{input.title}"
+    puts "OVERALL SCORE: #{input.score}"
+    puts "YEAR: #{input.year} \n "
+    puts "HEROINE SCORE AND SUMMARY: #{input.info}"
+  end
 end
