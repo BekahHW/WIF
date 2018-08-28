@@ -44,8 +44,8 @@ class Wif::CLI
     if ["Y"].include?(answer.upcase)
       movie.open_in_browser
     else
-      puts "\nThank you for using Badass Women in Film."
-      puts "Here's the list if you want to select another film:"
+      puts "Thank you for using Women in Film.\n"
+      puts "\nHere's the list if you want to select another film:"
       list
     end
   end
