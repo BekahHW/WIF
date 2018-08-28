@@ -6,15 +6,27 @@ class Wif::CLI
     puts "Let's get started with a sample of movies with amazing female characters."
     puts ""
     Wif::Scraper.scrape_heroines
-    puts "Here is a list of ten movies with kickass heroines:"
-    list
+    puts "Would you like to search for a movie title?"
+    search_by_title
+    # puts "Here is a list of ten movies with kickass heroines:"
+    # list
+  end
+
+  def search_by_title
+    puts "Y/N"
+    answer = gets.strip
+    if ["Y"].include?(answer.upcase)
+      Wif::Filmography.find_movie_by_name(title)
+    else
+      list
+    end
   end
 
   def list
+    puts "Here is a list of ten movies with kickass heroines:"
     movies = Wif::Filmography.all.sample(10)
     movies.each.with_index(1) do |movie, i|
       puts "#{i}. #{movie.title}"
-      binding.pry
     end
     select_list(movies)
   end
