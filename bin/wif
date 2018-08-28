@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require_relative '../lib/wif'
 
 Wif::CLI.new.start

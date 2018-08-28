@@ -27,6 +27,9 @@ class Wif::CLI
       index = input.to_i - 1
       display_selection(movies[index])
       see_more(movies[index])
+    else
+      puts "Please select a number from the list."
+      select_list(movies)
     end
   end
 
