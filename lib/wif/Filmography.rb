@@ -1,3 +1,4 @@
+require "pry"
 class Wif::Filmography
   attr_accessor :title, :info, :score, :heroine_rank, :movie_url, :year
 
@@ -13,5 +14,9 @@ class Wif::Filmography
 
   def save
     @@all << self
+  end
+
+  def self.find_movie_by_name(title)
+    self.all.find {|movie| movie.title == title}
   end
 end

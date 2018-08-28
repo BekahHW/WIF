@@ -14,6 +14,7 @@ class Wif::CLI
     movies = Wif::Filmography.all.sample(10)
     movies.each.with_index(1) do |movie, i|
       puts "#{i}. #{movie.title}"
+      binding.pry
     end
     select_list(movies)
   end
